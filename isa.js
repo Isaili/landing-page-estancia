@@ -11,11 +11,11 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => {
     console.log('Connected to MongoDB');
     return Branch.create({
-        name: 'Sucursal Ejemplo',
-        address: 'Dirección Ejemplo',
+        name: ' Tuxtla Gutierrz',
+        address: 'Centro de Tuxtla Gutiérrez',
         location: {
             type: 'Point',
-            coordinates: [ -73.856077, 40.848776 ] // Longitud, Latitud
+            coordinates: [-93.1149, 16.7528] // Longitud, Latitud
         }
     });
 })

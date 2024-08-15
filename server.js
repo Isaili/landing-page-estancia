@@ -14,22 +14,19 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-//registrar lasn rutas de middleware 
+// Registrar las rutas de middleware 
 
 app.use('/api/users', userRoutes);       // Rutas para usuarios
 app.use('/api/contact', contactRoutes);  // Rutas para contactos
 app.use('/api/heatmap', heatmapRoutes);  // Rutas para mapa de calor
-app.use('/api/location', locationRoutes);
+app.use('/api/location', locationRoutes); // Rutas para ubicación
 
+// Conectar a MongoDB
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('Conectado a MongoDB :)'))
+    .catch(error => console.error('Error al conectar a MongoDB :(', error));
 
-
-mongoose.connect(process.env.MONGO_URI,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(()=> console.log('conectado a mongoDB'))
-.catch(error => console.error('error al conectar monggoDB :(',error));
-
-
+// Iniciar el servidor
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
