@@ -31,7 +31,7 @@ exports.logActivity = async (req, res) => {
 };
 
 // Actualizar la geolocalización del usuario
-exports.updateLocation = async (req, res) => {
+exports.updateLocation = async (req, res) => { //este controlador se eliminara al igual que la ruta el 22/08/2024
     const { userId, location } = req.body;
     try {
         const user = await User.findById(userId);
