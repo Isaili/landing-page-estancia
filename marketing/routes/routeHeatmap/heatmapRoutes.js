@@ -1,5 +1,5 @@
 const express = require('express');
-const { updateHeatmap, getHeatmapData } = require('../controllers/heatmapController');
+const { updateHeatmap, getHeatmapData } = require('../../controllers/controllerHeatmap/heatmapController');
 const router = express.Router();
 
 router.post('/heatmap', updateHeatmap);

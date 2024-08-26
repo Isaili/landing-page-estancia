@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../../models/modelUser/User');
 const axios = require('axios');
 
 // Registrar la visita del usuario

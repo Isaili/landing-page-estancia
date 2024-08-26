@@ -1,5 +1,5 @@
 const geoip = require('geoip-lite');
-const Branch = require('../models/Branch');
+const Branch = require('../../models/modelBranch/Branch');
 
 exports.assignBranchByIP = async (req, res) => {
     try {

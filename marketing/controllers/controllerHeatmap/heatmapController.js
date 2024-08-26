@@ -1,4 +1,4 @@
-const Heatmap = require('../models/Heatmap');
+const Heatmap = require('../../models/modelHeatmap/Heatmap');
 
 // Actualiza los datos del mapa de calor
 exports.updateHeatmap = async (req, res) => {

@@ -3,10 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const userRoutes = require('./marketing/routes/userRoutes');
-const contactRoutes = require('./marketing/routes/contactRoutes');
-const heatmapRoutes = require('./marketing/routes/heatmapRoutes');
-const locationRoutes = require('./marketing/routes/locationRoutes');
+const userRoutes = require('./marketing/routes/routeUser/userRoutes');
+const contactRoutes = require('./marketing/routes/routeContact/contactRoutes');
+const heatmapRoutes = require('./marketing/routes/routeHeatmap/heatmapRoutes');
+const locationRoutes = require('./marketing/routes/routeLocation/locationRoutes');
 
 const app = express();
 const port = process.env.PORT || 5000;

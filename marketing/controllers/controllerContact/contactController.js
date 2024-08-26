@@ -1,4 +1,4 @@
-const Contact = require('../models/Contact')
+const Contact = require('../../models/modelContact/Contact')
 const nodemailer = require('nodemailer');
 
 

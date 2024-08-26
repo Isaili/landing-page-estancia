@@ -1,0 +1,45 @@
+http://localhost:5000/api/users/register
+
+post
+
+{
+    "ipAddress": "192.345.4.1",
+    "userAgent": "crome y chabe",
+    "referrer": "https://example.com",
+    "location": {
+        "type": "Point",
+        "coordinates": [43.5763, -74.0060] 
+    }
+}
+
+////////////////////////////////////////////////
+
+post
+
+http://localhost:5000/api/contact/submit
+
+{
+    "firstName": "hihtech",
+    "lastName": "empresa",
+    "email": "juan.perez@example.com",
+    "address": "123 Calle Principal",
+    "subject": "Consulta sobre servicios"
+}
+////////////////////////////////////////////
+
+post
+
+http://localhost:5000/api/heatmap/heatmap
+
+{
+    "section": "header",
+    "action": "click",
+    "x": 120,
+    "y": 200
+}
+
+/////////////////////////////////////////
+
+http://localhost:5000/api/heatmap/regresar
+
+get
