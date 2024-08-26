@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Registrar las rutas de middleware 
+// Registrar rutas de middleware 
 
 app.use('/api/users', userRoutes);       // Rutas para usuarios
 app.use('/api/contact', contactRoutes);  // Rutas para contactos

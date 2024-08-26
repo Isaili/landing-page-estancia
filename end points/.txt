@@ -43,3 +43,9 @@ http://localhost:5000/api/heatmap/heatmap
 http://localhost:5000/api/heatmap/regresar
 
 get
+
+
+
+
+
+para agregar una nueva sucursal debes ejecutar en archivo addSucursal que se encuentra en la carpeta raiz.

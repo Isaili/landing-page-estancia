@@ -1,8 +1,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Branch = require('./marketing/models/Branch');
+const Branch = require('./marketing/models/modelBranch/Branch');
 
-console.log('Mongo URI:', process.env.MONGO_URI); // Verifica el valor de MONGO_URI
+console.log('Mongo URI:', process.env.MONGO_URI); 
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
