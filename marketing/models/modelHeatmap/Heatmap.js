@@ -5,7 +5,7 @@ const heatmapSchema = new mongoose.Schema({
     action: String,
     x: Number,
     y: Number,
-    count: {type: Number, default: 1},
+    count: { type: Number, default: 1 }
 });
 
 module.exports = mongoose.model('Heatmap', heatmapSchema);
