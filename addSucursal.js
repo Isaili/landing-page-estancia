@@ -11,19 +11,20 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => {
     console.log('Connected to MongoDB');
     return Branch.create({
-        name: ' Tuxtla Gutierrz',
-        address: 'Centro de Tuxtla Gutiérrez',
+        name: 'cuidad de monterrey',
+        address: 'parque fundidora',
         location: {
             type: 'Point',
-            coordinates: [-93.1149, 16.7528] // Longitud, Latitud
+            coordinates: [-100.2595, 25.6784]
         }
     });
 })
+
 .then(() => {
     console.log('Sucursal guardada');
-    mongoose.connection.close(); // Cierra la conexión después de guardar
+    mongoose.connection.close(); 
 })
 .catch(error => {
     console.error('Error guardando sucursal:', error);
-    mongoose.connection.close(); // Cierra la conexión en caso de error
+    mongoose.connection.close(); 
 });

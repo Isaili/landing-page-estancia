@@ -15,7 +15,6 @@ app.use(cors());
 app.use(express.json());
 
 // Registrar rutas de middleware 
-
 app.use('/api/users', userRoutes);       // Rutas para usuarios
 app.use('/api/contact', contactRoutes);  // Rutas para contactos
 app.use('/api/heatmap', heatmapRoutes);  // Rutas para mapa de calor

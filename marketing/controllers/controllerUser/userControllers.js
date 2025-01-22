@@ -1,7 +1,7 @@
 const User = require('../../models/modelUser/User');
 const axios = require('axios');
 
-// Registrar la visita del usuario
+
 exports.registerVisit = async (req, res) => {
     const { ipAddress, userAgent, referrer, location } = req.body;
     try {
@@ -48,7 +48,6 @@ exports.registerVisit = async (req, res) => {
     }
 };
 
-// Registrar la actividad del usuario
 exports.logActivity = async (req, res) => {
     const { userId, type, element, position } = req.body;
     try {

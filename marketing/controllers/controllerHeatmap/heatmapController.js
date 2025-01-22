@@ -1,17 +1,13 @@
 const Heatmap = require('../../models/modelHeatmap/Heatmap');
 
-// Actualiza los datos del mapa de calor
 exports.updateHeatmap = async (req, res) => {
     const { section, action, x, y } = req.body;
     try {
-        // Buscar documento que coincida con la sección, acción y coordenadas
         let heatmap = await Heatmap.findOne({ section, action, x, y });
 
         if (heatmap) {
-            // Si existe, incrementar el contador
             heatmap.count += 1;
         } else {
-            // Si no existe, crear un nuevo documento
             heatmap = new Heatmap({ section, action, x, y, count: 1 });
         }
         
@@ -24,7 +20,7 @@ exports.updateHeatmap = async (req, res) => {
 };
 
 
-// Obtiene los datos del mapa de calor
+
 exports.getHeatmapData = async (req, res) => {
     try {
         const data = await Heatmap.find({});
@@ -35,7 +31,6 @@ exports.getHeatmapData = async (req, res) => {
     }
 };
 
-// Controlador para obtener conteos por sección
 exports.getHeatmapCounts = async (req, res) => {
     try {
         const counts = await Heatmap.aggregate([

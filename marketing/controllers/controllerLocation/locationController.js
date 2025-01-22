@@ -8,6 +8,7 @@ exports.assignBranchByIP = async (req, res) => {
 
         const geo = geoip.lookup(ip);
         console.log('Información geográfica:', geo);
+       
 
         const branches = await Branch.find();
         console.log('Número de sucursales encontradas:', branches.length);
@@ -46,8 +47,12 @@ function findNearestBranch(userLocation, branches) {
     let minDistance = Infinity;
 
     branches.forEach(branch => {
-        const distance = getDistance(userLocation, branch.location.coordinates);
-        console.log(`Distancia a ${branch.name}: ${distance.toFixed(2)} km`);
+        
+        const branchCoordinates = [branch.location.coordinates[1], branch.location.coordinates[0]]; 
+
+        const distance = getDistance(userLocation, branchCoordinates); 
+        console.log(`Distancia desde ${userLocation} a ${branchCoordinates}: ${distance.toFixed(2)} km`);
+     
         if (distance < minDistance) {
             minDistance = distance;
             nearestBranch = branch;
@@ -57,8 +62,9 @@ function findNearestBranch(userLocation, branches) {
     return nearestBranch;
 }
 
+
 function getDistance([lat1, lon1], [lon2, lat2]) {
-    const R = 6371; // Radio de la Tierra en kilómetros
+    const R = 6371; 
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a = 
@@ -67,7 +73,7 @@ function getDistance([lat1, lon1], [lon2, lat2]) {
         Math.sin(dLon/2) * Math.sin(dLon/2)
     ; 
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-    return R * c; // Distancia en kilómetros
+    return R * c; 
 }
 
 function deg2rad(deg) {
